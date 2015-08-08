@@ -12,8 +12,8 @@ install:
   - arduino --install-boards esp8266:esp8266 --save-prefs
   - arduino --install-library "DHT sensor library"
 script:
-  - arduino --verify --board esp8266:esp8266:generic $PWD/cloud_data_logger/cloud_data_logger.ino
-  - arduino --verify --board esp8266:esp8266:generic $PWD/dht_test/dht_test.ino
+  - arduino --verify --board esp8266:esp8266:generic $PWD/cloud_data_logger/cloud_data_logger.ino --verbose-build
+  - arduino --verify --board esp8266:esp8266:generic $PWD/dht_test/dht_test.ino --verbose-build
 notifications:
   email:
     on_success: change
