@@ -7,8 +7,8 @@ before_install:
   - tar xf arduino-1.6.5-linux64.tar.xz
   - sudo mv arduino-1.6.5 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+  - source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
 install:
-  - arduino --install-boards esp8266:esp8266
   - arduino --install-library "DHT sensor library"
 script:
   - arduino --verify --board esp8266com:esp8266:generic $PWD/sensor_test/sensor_test.ino
