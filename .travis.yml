@@ -11,8 +11,8 @@ before_install:
 install:
   - arduino --install-library "DHT sensor library"
 script:
-  - arduino --verify --board esp8266com:esp8266:generic $PWD/sensor_test/sensor_test.ino
-  - arduino --verify --board esp8266com:esp8266:generic $PWD/wifi_weather_station/wifi_weather_station.ino
+  - arduino --verify --board esp8266com:esp8266:generic $PWD/cloud_data_logger/cloud_data_logger.ino
+  - arduino --verify --board esp8266com:esp8266:generic $PWD/dht_test/dht_test.ino
 notifications:
   email:
     on_success: change
