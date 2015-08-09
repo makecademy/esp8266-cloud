@@ -7,13 +7,12 @@ before_install:
   - tar xf arduino-1.6.5-linux64.tar.xz
   - sudo mv arduino-1.6.5 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
-  - export PATH="$HOME/arduino_ide:$PATH"
 install:
   - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
   - arduino --install-boards esp8266:esp8266
   - arduino --install-library "DHT sensor library"
 script:
-  - arduino --verify --board esp8266:esp8266:generic $PWD/dht_test/dht_test.ino --verbose-build
+  - arduino --verify --board esp8266:esp8266:huzzah $PWD/dht_test/dht_test.ino --verbose-build
 notifications:
   email:
     on_success: change
