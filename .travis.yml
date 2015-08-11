@@ -5,8 +5,7 @@ before_install:
 install:
   - arduino --install-library "DHT sensor library"
 script:
-  - arduino --verify --board esp8266:esp8266:huzzah $PWD/dht_test/dht_test.ino
-  - arduino --verify --board esp8266:esp8266:huzzah $PWD/cloud_data_logger/cloud_data_logger.ino --verbose-build
+  - build_platform esp8266
 notifications:
   email:
     on_success: change
