@@ -58,7 +58,7 @@ void loop() {
   }
   
   // Reading temperature and humidity
-  int h = dht.readPressure();
+  int h = dht.readHumidity();
   // Read temperature as Celsius
   int t = dht.readTemperature();
   
