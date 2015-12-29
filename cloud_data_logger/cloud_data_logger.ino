@@ -18,6 +18,10 @@ DHT dht(DHTPIN, DHTTYPE, 15);
 // Host
 const char* host = "dweet.io";
 
+  
+// Use WiFiClient class to create TCP connections
+WiFiClient client;
+
 void setup() {
   
   // Start Serial
@@ -48,9 +52,7 @@ void loop() {
  
   Serial.print("Connecting to ");
   Serial.println(host);
-  
-  // Use WiFiClient class to create TCP connections
-  WiFiClient client;
+
   const int httpPort = 80;
   if (!client.connect(host, httpPort)) {
     Serial.println("connection failed");
